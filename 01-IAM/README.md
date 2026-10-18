@@ -116,3 +116,14 @@ de accesos.
 
 ![Usuario en Grupo](screenshots/usuario-en-grupo.png)
 
+### Validación de Acceso
+
+Se inició sesión correctamente con el usuario `soporte-01`.
+
+Se verificó que el usuario heredó la política `AdministratorAccess`
+a través del grupo `Administradores`, pudiendo acceder a los servicios
+autorizados dentro de la cuenta AWS.
+
+### Evidencia
+
+![Login Correcto](screenshots/login-soporte01.png)

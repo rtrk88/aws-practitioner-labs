@@ -80,3 +80,15 @@ Inicialmente el grupo fue creado sin usuarios ni políticas asociadas para enten
 ### Evidencia
 
 ![Grupo Administradores](screenshots/grupo-administradores.png)
+
+### Asignación de Política al Grupo IAM
+
+Se asignó la política administrada por AWS denominada `AdministratorAccess`
+al grupo `Administradores`.
+
+Esta política proporciona acceso completo a los recursos de AWS y permite
+comprender cómo los permisos son heredados por los usuarios pertenecientes a un grupo.
+
+### Evidencia
+
+![Política Grupo](screenshots/politica-grupo.png)

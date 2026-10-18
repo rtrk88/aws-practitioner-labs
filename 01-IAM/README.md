@@ -68,3 +68,15 @@ Comprendí la importancia de otorgar únicamente los permisos necesarios a cada 
 - Limpieza de usuarios y grupos de pruebas anteriores.
 - Se mantuvo únicamente el usuario administrativo principal: admin-franz.
 - Preparación del entorno para realizar el laboratorio IAM desde cero.
+- Creación del grupo IAM "Administradores".
+- Verificación de que el grupo fue creado inicialmente sin usuarios ni permisos asignados.
+
+### Creación de un Grupo IAM
+
+Se creó el grupo "Administradores" para comprender cómo AWS permite administrar permisos de manera centralizada.
+
+Inicialmente el grupo fue creado sin usuarios ni políticas asociadas para entender la diferencia entre grupos y permisos.
+
+### Evidencia
+
+![Grupo Administradores](screenshots/grupo-administradores.png)

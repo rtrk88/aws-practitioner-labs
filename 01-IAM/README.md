@@ -92,3 +92,27 @@ comprender cómo los permisos son heredados por los usuarios pertenecientes a un
 ### Evidencia
 
 ![Política Grupo](screenshots/politica-grupo.png)
+
+### Creación de Usuario IAM
+
+Se creó el usuario `soporte-01` para comprender la administración de identidades en AWS mediante IAM.
+
+El usuario recibió acceso a la consola de administración de AWS para realizar pruebas de autenticación y permisos.
+
+### Evidencia
+
+![Usuario IAM](screenshots/usuario-soporte01.png)
+
+### Asociación de Usuario a Grupo IAM
+
+Se agregó el usuario `soporte-01` al grupo `Administradores`.
+
+Los permisos no fueron asignados directamente al usuario. En su lugar,
+el usuario hereda la política `AdministratorAccess` a través del grupo IAM,
+siguiendo las buenas prácticas recomendadas por AWS para la administración
+de accesos.
+
+### Evidencia
+
+![Usuario en Grupo](screenshots/usuario-en-grupo.png)
+

@@ -49,4 +49,26 @@ Método de autenticación adicional para mejorar la seguridad.
 
 - Un Explicit Deny siempre tiene prioridad sobre un Allow.
 - Los IAM Roles son preferibles a las Access Keys permanentes.
-- MFA aumenta la seguridad de
+- MFA aumenta la seguridad de las cuentas.
+
+## Evidencias
+
+### Usuario creado
+
+(Pantallazo)
+
+### Grupo creado
+
+(Pantallazo)
+
+### Política asignada
+
+(Pantallazo)
+
+### MFA habilitado
+
+(Pantallazo)
+
+## Lecciones aprendidas
+
+IAM es el servicio central para el control de acceso en AWS y constituye la base de cualquier arquitectura segura.

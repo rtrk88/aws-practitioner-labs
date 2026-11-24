@@ -12,4 +12,4 @@
 - **Acceso entre cuentas:** rol en la cuenta destino con *trust policy* y `sts:AssumeRole`.
 
 
-![...](screenshots/03-trust-relationship.png)
+

@@ -62,7 +62,11 @@ Amazon S3 es un servicio de almacenamiento de objetos altamente escalable y dura
 - S3 utiliza almacenamiento de objetos.
 - No puede montarse como disco directamente en EC2 como EBS.
 
-  ## Versioning
+
+
+
+
+   ## Versioning
 
 Se habilitó Versioning en el bucket para mantener el historial de cambios de los objetos almacenados.
 
@@ -80,4 +84,31 @@ Se habilitó Versioning en el bucket para mantener el historial de cambios de lo
 - Las versiones anteriores permanecen disponibles.
 - Permite recuperación ante eliminaciones o sobrescrituras accidentales.
 - Es una característica ampliamente utilizada para protección de datos.
+
+
+
+
+## Bucket Policy
+
+Se implementó una Bucket Policy para impedir la eliminación de objetos dentro del bucket.
+
+### Política aplicada
+
+- Effect: Deny
+- Action: s3:DeleteObject
+- Principal: *
+
+### Resultado
+
+Al intentar eliminar un objeto, AWS respondió con Access Denied.
+
+### Evidencia
+
+![Delete Denied](screenshots/05-delete-denied-by-policy.png)
+
+### Aprendizajes
+
+- Las Bucket Policies se aplican al bucket.
+- Un Explicit Deny tiene prioridad sobre cualquier Allow.
+- Las políticas permiten implementar controles de seguridad adicionales.
 

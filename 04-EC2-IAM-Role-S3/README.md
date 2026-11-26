@@ -1,48 +1,46 @@
 # EC2 Accessing S3 Using IAM Role
 
-## Objective
+## Objetivo
 
-Demonstrate secure access from an Amazon EC2 instance to an Amazon S3 bucket using an IAM Role instead of access keys.
+Demostrar el acceso seguro desde una instancia Amazon EC2 a un bucket Amazon S3 utilizando un IAM Role en lugar de Access Keys.
 
-## Architecture
+## Servicios utilizados
 
-EC2 Instance
-    ↓
-IAM Role
-    ↓
-Amazon S3 Bucket
+- Amazon EC2
+- Amazon S3
+- AWS IAM
+- AWS STS
 
-## Tasks Performed
+## Actividades realizadas
 
-- Create IAM Role for EC2
-- Attach S3 permissions to the role
-- Launch EC2 instance
-- Attach IAM Role to EC2
-- Connect to EC2
-- Verify AWS identity using STS
-- Access S3 bucket without access keys
+- Creación de IAM Role para EC2
+- Asignación de permisos sobre S3
+- Lanzamiento de instancia EC2
+- Asociación del IAM Role
+- Verificación de identidad mediante STS
+- Acceso a bucket S3 sin credenciales estáticas
 
-## Evidence
+## Evidencias
 
-### IAM Role Created
+### IAM Role creado
 
-(Screenshot)
+![IAM Role](screenshots/iam-role.png)
 
-### EC2 Instance
+### Instancia EC2
 
-(Screenshot)
+![EC2](screenshots/ec2-instance.png)
 
-### STS Identity Verification
+### Verificación STS
 
-(Screenshot)
+![STS](screenshots/sts-identity.png)
 
-### S3 Access Test
+### Acceso a S3
 
-(Screenshot)
+![S3](screenshots/s3-access.png)
 
-## Key Learnings
+## Aprendizajes
 
-- IAM Roles provide temporary credentials.
-- Access keys should be avoided when possible.
-- EC2 can securely access AWS services through IAM Roles.
-- AWS STS provides temporary security credentials.
+- IAM Roles entregan credenciales temporales.
+- No es necesario almacenar Access Keys en servidores.
+- STS proporciona credenciales temporales y seguras.
+- EC2 puede acceder a servicios AWS utilizando un rol asignado.

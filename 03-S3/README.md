@@ -62,3 +62,22 @@ Amazon S3 es un servicio de almacenamiento de objetos altamente escalable y dura
 - S3 utiliza almacenamiento de objetos.
 - No puede montarse como disco directamente en EC2 como EBS.
 
+  ## Versioning
+
+Se habilitó Versioning en el bucket para mantener el historial de cambios de los objetos almacenados.
+
+### Versioning habilitado
+
+![Versioning Enabled](screenshots/03-versioning-enabled.png)
+
+### Historial de versiones
+
+![Object Version History](screenshots/04-object-version-history.png)
+
+### Aprendizajes
+
+- Cada objeto recibe un Version ID.
+- Las versiones anteriores permanecen disponibles.
+- Permite recuperación ante eliminaciones o sobrescrituras accidentales.
+- Es una característica ampliamente utilizada para protección de datos.
+

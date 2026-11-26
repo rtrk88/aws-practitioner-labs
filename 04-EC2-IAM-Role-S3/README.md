@@ -1,83 +1,81 @@
-# EC2 Accessing S3 Using IAM Role
+# Acceso a S3 desde EC2 utilizando IAM Role
 
-## Objective
+## Objetivo
 
-Demonstrate secure access from an Amazon EC2 instance to an Amazon S3 bucket using an IAM Role instead of AWS Access Keys.
+Demostrar el acceso seguro desde una instancia Amazon EC2 a un bucket Amazon S3 utilizando un IAM Role, evitando el uso de Access Keys.
 
-## Services Used
+## Servicios utilizados
 
 - Amazon EC2
 - Amazon S3
-- AWS Identity and Access Management (IAM)
-- AWS Security Token Service (STS)
+- AWS IAM
+- AWS STS
 
-## Architecture
+## Arquitectura
 
-EC2 Instance
+EC2
 ↓
 IAM Role
 ↓
 Amazon S3
 
-## Tasks Performed
+## Actividades realizadas
 
-- Created an IAM Role for Amazon EC2.
-- Attached AmazonS3ReadOnlyAccess permissions.
-- Launched an EC2 instance using Amazon Linux 2023.
-- Assigned the IAM Role to the EC2 instance.
-- Verified the assumed role using AWS STS.
-- Accessed Amazon S3 without configuring Access Keys.
+- Creación de IAM Role para EC2.
+- Asignación de permisos de solo lectura sobre Amazon S3.
+- Creación de instancia EC2 con Amazon Linux 2023.
+- Asociación del IAM Role a la instancia.
+- Verificación de identidad mediante AWS STS.
+- Acceso a Amazon S3 sin configurar Access Keys.
 
-## Evidence
+## Evidencias
 
-### 1. IAM Role Created
+### 1. IAM Role creado
 
-The IAM Role was configured for EC2 and granted read-only permissions to Amazon S3.
+El IAM Role fue configurado para permitir que una instancia EC2 acceda a Amazon S3 utilizando credenciales temporales.
 
-![IAM Role Created](screenshots/01-iam-role-created.png)
-
----
-
-### 2. EC2 Launch Configuration
-
-EC2 instance configuration before deployment.
-
-![EC2 Launch Configuration](screenshots/02-ec2-launch-configuration.png)
+![IAM Role](screenshots/01-iam-role-created.png)
 
 ---
 
-### 3. EC2 Instance Running
+### 2. Configuración de lanzamiento de EC2
 
-Amazon EC2 instance successfully deployed and running.
+Configuración utilizada antes del despliegue de la instancia EC2.
 
-![EC2 Instance Running](screenshots/03-ec2-instance-running.png)
-
----
-
-### 4. STS Identity Verification
-
-Verified that the EC2 instance automatically assumed the IAM Role using AWS Security Token Service (STS).
-
-![STS Identity Verification](screenshots/04-sts-identity.png)
+![Configuración EC2](screenshots/02-ec2-launch-configuration.png)
 
 ---
 
-### 5. S3 Access Test
+### 3. Instancia EC2 en ejecución
 
-Successfully listed S3 resources without using Access Keys.
+Instancia desplegada correctamente utilizando Amazon Linux 2023.
 
-![S3 Access Test](screenshots/05-s3-access-test.png)
+![EC2 Running](screenshots/03-ec2-instance-running.png)
 
 ---
 
-## Key Learnings
+### 4. Verificación de identidad mediante STS
 
-- IAM Roles provide temporary credentials through AWS STS.
-- EC2 instances can securely access AWS services without storing Access Keys.
-- Following AWS security best practices reduces credential exposure risks.
-- AmazonS3ReadOnlyAccess grants read-only permissions to Amazon S3 resources.
-- AWS automatically provides temporary credentials to EC2 instances through the assigned IAM Role.
+Comprobación de que la instancia asumió correctamente el IAM Role asignado.
 
-## Outcome
+![STS Identity](screenshots/04-sts-identity.png)
 
-The EC2 instance successfully assumed the IAM Role and accessed Amazon S3 using temporary credentials issued by AWS STS, demonstrating a secure and recommended method for service-to-service authentication in AWS.
+---
+
+### 5. Prueba de acceso a S3
+
+Validación del acceso al bucket S3 utilizando las credenciales temporales entregadas por AWS STS.
+
+![S3 Access](screenshots/05-s3-access-test.png)
+
+## Aprendizajes
+
+- Los IAM Roles entregan credenciales temporales mediante AWS STS.
+- Las instancias EC2 pueden acceder a servicios AWS sin almacenar Access Keys.
+- El uso de IAM Roles mejora la seguridad al evitar credenciales estáticas.
+- AmazonS3ReadOnlyAccess permite acceso de solo lectura a los recursos de S3.
+- AWS entrega automáticamente credenciales temporales a una instancia EC2 cuando tiene un rol asignado.
+
+## Resultado
+
+La instancia EC2 logró acceder a Amazon S3 utilizando credenciales temporales proporcionadas por AWS STS mediante un IAM Role, demostrando una forma segura y recomendada de autenticación entre servicios dentro de AWS.

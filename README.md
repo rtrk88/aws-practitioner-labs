@@ -24,7 +24,7 @@ Cada laboratorio incluye:
 | # | Laboratorio | Estado |
 |---|---|---|
 | 01 | Fundamentos de IAM | ✅ |
-| 02 | IAM Roles y STS | ⬜ |
+| 02 | IAM Roles y STS | ✅ |
 | 03 | Fundamentos de S3 | ⬜ |
 | 04 | Servidor Web en EC2 | ⬜ |
 | 05 | Conceptos básicos de VPC | ⬜ |

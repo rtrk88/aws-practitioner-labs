@@ -11,5 +11,18 @@
 - **EC2 o Lambda accediendo a S3 o DynamoDB:** usar siempre un **IAM Role** (nunca *access keys* hardcodeadas).
 - **Acceso entre cuentas:** rol en la cuenta destino con *trust policy* y `sts:AssumeRole`.
 
+# Laboratorio 03: Amazon S3
 
+## Qué aprendí
 
+- Crear buckets S3
+- Subir objetos
+- Entender almacenamiento de objetos
+- Aplicar buenas prácticas de seguridad usando Block Public Access
+
+## Conceptos clave para el examen
+
+- S3 es almacenamiento de objetos.
+- Durabilidad de 99.999999999% (11 nueves).
+- Es un servicio regional.
+- Escala prácticamente de forma ilimitada.

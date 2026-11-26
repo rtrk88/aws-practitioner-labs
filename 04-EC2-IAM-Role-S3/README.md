@@ -24,7 +24,7 @@ Demostrar el acceso seguro desde una instancia Amazon EC2 a un bucket Amazon S3 
 
 ### IAM Role creado
 
-![IAM Role](screenshots/iam-role-created.png)
+![IAM Role](screenshots/01-iam-role-created.png)
 
 ### Instancia EC2
 
